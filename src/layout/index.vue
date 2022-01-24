@@ -1,28 +1,30 @@
+<script setup lang="ts">
+import Head from '@/layout/head/Head.vue';
+import MenuBar from '@/layout/menu/MenuBar.vue';
+</script>
+
 <template>
     <el-container class="layout">
-        <el-aside width="200px" class="aside">Aside</el-aside>
+        <el-aside width="200px" class="aside">
+            <MenuBar></MenuBar>
+        </el-aside>
         <el-container>
-            <el-header class="header">Header</el-header>
+            <el-header class="header">
+                <Head></Head>
+            </el-header>
             <el-main class="main">Main</el-main>
         </el-container>
     </el-container>
 </template>
 
-<script setup lang="ts">
-
-</script>
-
 <style lang="scss" scoped>
-    .layout{
-        height: 100%;
-        .aside{
-            background-color: aquamarine;
-        }
-        .header {
-            background-color: beige;
-        }
-        .main{
-            background-color: azure;
-        }
+.layout {
+    height: 100%;
+    .header {
+        background-color: beige;
     }
+    .main {
+        background-color: azure;
+    }
+}
 </style>
