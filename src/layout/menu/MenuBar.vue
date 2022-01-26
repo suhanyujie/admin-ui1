@@ -6,11 +6,51 @@ import {
     Menu as IconMenu,
     Setting,
 } from '@element-plus/icons-vue'
+import { reactive } from 'vue';
 
-const handleOpen = (key: string | number, keyPath: string[]) => {
+// 菜单数据
+let menuList = reactive([
+    {
+        path: '/dashboard',
+        component: 'Layout',
+        meta: {
+            title: '首页',
+            icon: "el-icon-s-home",
+            roles: ['sys:manage']
+        },
+        children: []
+    }, {
+        path: '/system',
+        component: 'Layout',
+        alwaysShow: true,
+        meta: {
+            title: '系统管理',
+            icon: "el-icon-menu",
+            roles: ['sys:manage'],
+            parentId: 0
+        },
+        children: [
+            {
+                path: '/department',
+                component: '/system/department/department',
+                alwaysShow: false,
+                name: "department",
+                meta: {
+                    title: '部门管理',
+                    icon: "el-icon-document",
+                    roles: ['sys:dept'],
+                    parentId: 17
+                },
+                children: []
+            }
+        ]
+    }
+])
+
+const handleOpen = (key: string | number, keyPath: string) => {
     console.log(key, keyPath)
 }
-const handleClose = (key: string | number, keyPath: string[]) => {
+const handleClose = (key: string | number, keyPath: string) => {
     console.log(key, keyPath)
 }
 </script>
@@ -18,9 +58,19 @@ const handleClose = (key: string | number, keyPath: string[]) => {
 <template>
     <el-col :span="24">
         <h5 class="mb-2">Redis Clinet</h5>
-        <el-menu @open="handleOpen" @close="handleClose" my-attr="123" default-active="1">
-            <MenuItem></MenuItem>
+        <el-menu
+            @open="handleOpen"
+            @close="handleClose"
+            default-active="1"
+            class="el-menu-vertical-demo"
+        >
+            <MenuItem :menuList="menuList"></MenuItem>
         </el-menu>
     </el-col>
 </template>
-
+<style lang="scss" scoped>
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
+</style>
