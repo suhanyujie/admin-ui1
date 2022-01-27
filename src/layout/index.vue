@@ -21,7 +21,7 @@ import MenuBar from '@/layout/menu/MenuBar.vue';
 .layout {
     height: 100%;
     .header {
-        background-color: beige;
+        border: 1px solid #e5e5e5;
     }
     .main {
         background-color: azure;

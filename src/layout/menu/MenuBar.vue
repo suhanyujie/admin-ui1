@@ -1,5 +1,19 @@
+<template>
+    <el-col :span="24">
+        <MenuLogo></MenuLogo>
+        <el-menu
+            @open="handleOpen"
+            @close="handleClose"
+            default-active="1"
+            class="el-menu-vertical-demo"
+        >
+            <MenuItem :menuList="menuList"></MenuItem>
+        </el-menu>
+    </el-col>
+</template>
 <script setup lang="ts">
 import MenuItem from './MenuItem.vue';
+import MenuLogo from './MenuLogo.vue';
 import {
     Location,
     Document,
@@ -54,20 +68,6 @@ const handleClose = (key: string | number, keyPath: string) => {
     console.log(key, keyPath)
 }
 </script>
-
-<template>
-    <el-col :span="24">
-        <h5 class="mb-2">Redis Clinet</h5>
-        <el-menu
-            @open="handleOpen"
-            @close="handleClose"
-            default-active="1"
-            class="el-menu-vertical-demo"
-        >
-            <MenuItem :menuList="menuList"></MenuItem>
-        </el-menu>
-    </el-col>
-</template>
 <style lang="scss" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
