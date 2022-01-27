@@ -6,4 +6,6 @@
 * 找不到 path 模块 https://blog.csdn.net/shentian885/article/details/122242266
 * element-plus ui https://element-plus.gitee.io/zh-CN/component
 * redis 客户端 https://github.com/fuyoo/bs-redis-desktop-client
+* 留待参考的 admin ui
+    * https://gitee.com/Rick_0/ts-admin/tree/base
 

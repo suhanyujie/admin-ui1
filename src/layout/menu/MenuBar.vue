@@ -4,14 +4,16 @@
         <el-menu
             @open="handleOpen"
             @close="handleClose"
-            default-active="1"
+            :default-active="activeIndex"
             class="el-menu-vertical-demo"
+            router="true"
         >
             <MenuItem :menuList="menuList"></MenuItem>
         </el-menu>
     </el-col>
 </template>
 <script setup lang="ts">
+import { useRoute } from 'vue-router';
 import MenuItem from './MenuItem.vue';
 import MenuLogo from './MenuLogo.vue';
 import {
@@ -20,7 +22,14 @@ import {
     Menu as IconMenu,
     Setting,
 } from '@element-plus/icons-vue'
-import { reactive } from 'vue';
+import { ref, computed, reactive } from 'vue';
+
+// useRoute 获取当前路由
+const route = useRoute()
+const activeIndex = computed(()=>{
+    const {path} = route
+    return path
+})
 
 // 菜单数据
 let menuList = reactive([
@@ -29,7 +38,7 @@ let menuList = reactive([
         component: 'Layout',
         meta: {
             title: '首页',
-            icon: "el-icon-s-home",
+            icon: "HomeFilled",
             roles: ['sys:manage']
         },
         children: []
@@ -45,7 +54,7 @@ let menuList = reactive([
         },
         children: [
             {
-                path: '/department',
+                path: '/system/department',
                 component: '/system/department/department',
                 alwaysShow: false,
                 name: "department",

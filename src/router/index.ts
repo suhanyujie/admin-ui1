@@ -4,9 +4,21 @@ import Layout from '@/layout/index.vue'
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
-        name: 'home',
         component: Layout,
-    }
+        redirect: '/dashboard',
+        children: [
+            {
+                path: '/dashboard',
+                component: () => import('@/components/dashboard/Index.vue'),
+                name: 'dashboard',
+                meta: {
+                    title: '首页',
+                    icon: '#icondashboard',
+                }
+            }
+        ]
+    },
+
 ]
 
 // 创建路由
