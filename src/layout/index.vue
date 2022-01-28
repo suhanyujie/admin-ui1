@@ -5,7 +5,7 @@ import MenuBar from '@/layout/menu/MenuBar.vue';
 
 <template>
     <el-container class="layout">
-        <el-aside width="200px" class="aside">
+        <el-aside class="aside">
             <MenuBar></MenuBar>
         </el-aside>
         <el-container>
@@ -22,8 +22,13 @@ import MenuBar from '@/layout/menu/MenuBar.vue';
 <style lang="scss" scoped>
 .layout {
     height: 100%;
+    .aside{
+        width: auto;
+    }
     .header {
         border: 1px solid #e5e5e5;
+        display: flex;
+        align-items: center;
     }
     .main {
         background-color: azure;

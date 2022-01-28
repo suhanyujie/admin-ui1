@@ -17,8 +17,26 @@ const routes: Array<RouteRecordRaw> = [
                 }
             }
         ]
-    },
-
+    }, {
+        path: '/system',
+        component: Layout,
+        meta: {
+            title: '系统管理',
+            icon: 'el-icon-menu',
+            parentId: 0,
+        },
+        children: [
+            {
+                path: '/system/department',
+                component: () => import('@/views/system/department/department.vue'),
+                name: 'department',
+                meta: {
+                    title: '部门管理',
+                    icon: 'el-icon-document',
+                }
+            }
+        ]
+    }
 ]
 
 // 创建路由

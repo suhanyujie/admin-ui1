@@ -1,8 +1,9 @@
 <template>
-<div>
-    头部
-</div>
+    <Collapse></Collapse>
+    <BreadCrumb></BreadCrumb>
 </template>
 
 <script setup lang="ts">
+import Collapse from "./Collapse.vue";
+import BreadCrumb from "./BreadCrumb.vue";
 </script>

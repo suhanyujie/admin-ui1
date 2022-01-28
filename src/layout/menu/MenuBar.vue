@@ -1,12 +1,15 @@
 <template>
     <el-col :span="24">
-        <MenuLogo></MenuLogo>
+        <MenuLogo v-if="menuIsExpand"></MenuLogo>
         <el-menu
+            mode="vertical"
             @open="handleOpen"
             @close="handleClose"
             :default-active="activeIndex"
             class="el-menu-vertical-demo"
             router="true"
+            :collapse="!menuIsExpand"
+            collapse-transition="true"
         >
             <MenuItem :menuList="menuList"></MenuItem>
         </el-menu>
@@ -23,7 +26,9 @@ import {
     Setting,
 } from '@element-plus/icons-vue'
 import { ref, computed, reactive } from 'vue';
+import { useStore } from '@/store/index';
 
+const store = useStore()
 // useRoute 获取当前路由
 const route = useRoute()
 const activeIndex = computed(()=>{
@@ -76,6 +81,9 @@ const handleOpen = (key: string | number, keyPath: string) => {
 const handleClose = (key: string | number, keyPath: string) => {
     console.log(key, keyPath)
 }
+let menuIsExpand = computed(()=>{
+    return store.getters['getMenuIsExpand']
+})
 </script>
 <style lang="scss" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
