@@ -7,9 +7,9 @@
             @close="handleClose"
             :default-active="activeIndex"
             class="el-menu-vertical-demo"
-            router="true"
+            :router="true"
             :collapse="!menuIsExpand"
-            collapse-transition="true"
+            :collapse-transition="true"
         >
             <MenuItem :menuList="menuList"></MenuItem>
         </el-menu>
@@ -90,4 +90,5 @@ let menuIsExpand = computed(()=>{
   width: 200px;
   min-height: 400px;
 }
+
 </style>
