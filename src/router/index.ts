@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -32,6 +32,22 @@ const routes: Array<RouteRecordRaw> = [
                 name: 'department',
                 meta: {
                     title: '部门管理',
+                    icon: 'el-icon-document',
+                }
+            }
+        ]
+    },
+    {
+        path: '/login',
+        component: Layout,
+        redirect: '/login/index',
+        children: [
+            {
+                path: '/login/index',
+                component: () => import('@/views/login/login.vue'),
+                name: 'loginIndex',
+                meta: {
+                    title: '登录',
                     icon: 'el-icon-document',
                 }
             }

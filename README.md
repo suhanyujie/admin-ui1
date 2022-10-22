@@ -10,4 +10,5 @@
 * redis 客户端 https://github.com/fuyoo/bs-redis-desktop-client
 * 留待参考的 admin ui
     * https://gitee.com/Rick_0/ts-admin/tree/base
+* 2022 vue3 写 admin [教程](https://www.bilibili.com/video/BV1nr4y1G73d/) 
 
