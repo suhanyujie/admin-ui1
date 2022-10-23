@@ -5,6 +5,7 @@
         </el-aside>
         <el-container>
             <el-header class="header">
+
                 <Head></Head>
             </el-header>
             <el-main class="main">
@@ -22,14 +23,17 @@ import Tabs from "@/layout/tabs/Tabs.vue";
 <style lang="scss" scoped>
 .layout {
     height: 100%;
+
     .aside {
         width: auto;
     }
+
     .header {
         border: 1px solid #e5e5e5;
         display: flex;
         align-items: center;
     }
+
     .main {
         padding-top: 0px;
     }

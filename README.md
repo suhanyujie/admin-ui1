@@ -11,4 +11,5 @@
 * 留待参考的 admin ui
     * https://gitee.com/Rick_0/ts-admin/tree/base
 * 2022 vue3 写 admin [教程](https://www.bilibili.com/video/BV1nr4y1G73d/) 
-
+* 手把手教你用 vite + vue3 + ts + pinia + vueuse 打造企业级前端项目 https://juejin.cn/post/7079785777692934174
+* (10月最新) 前端图形学实战: 从零开发几何画板(vue3 + vite版) https://juejin.cn/post/7154723970007171108
