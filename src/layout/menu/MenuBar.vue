@@ -41,10 +41,10 @@ let menuList = reactive([
         },
         children: []
     }, {
-        path: '/login',
+        path: '/connection',
         component: 'Layout',
         meta: {
-            title: '登录',
+            title: '连接',
             icon: "HomeFilled",
             roles: ['sys:manage']
         },

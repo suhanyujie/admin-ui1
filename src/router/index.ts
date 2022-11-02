@@ -38,21 +38,37 @@ const routes: Array<RouteRecordRaw> = [
         ]
     },
     {
-        path: '/login',
+        path: '/connection',
         component: Layout,
-        redirect: '/login/index',
+        redirect: '/connection/conn',
         children: [
             {
-                path: '/login/index',
-                component: () => import('@/views/login/login.vue'),
+                path: '/connection/conn',
+                component: () => import('@/views/conn/conn.vue'),
                 name: 'loginIndex',
                 meta: {
-                    title: '登录',
+                    title: '连接',
                     icon: 'el-icon-document',
                 }
             }
         ]
     }
+    // {
+    //     path: '/login',
+    //     component: Layout,
+    //     redirect: '/login/index',
+    //     children: [
+    //         {
+    //             path: '/login/index',
+    //             component: () => import('@/views/login/login.vue'),
+    //             name: 'loginIndex',
+    //             meta: {
+    //                 title: '登录',
+    //                 icon: 'el-icon-document',
+    //             }
+    //         }
+    //     ]
+    // }
 ]
 
 // 创建路由
