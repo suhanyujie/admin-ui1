@@ -4,9 +4,9 @@
             <div class="one-item-box">
                 <el-row :span="24">
                     <el-col :span="10">
-                        <span class="conn-name-box">item Name...</span>
+                        <span class="conn-name-box">{{ connTitle }}</span>
                     </el-col>
-                    <el-col :offset="4" :span="4">
+                    <el-col :offset="4" :span="4" class="flex items-center">
                         <div class="grid-content ep-bg-purple" />
                         <el-row :span="24" justify="end">
                             <el-button type="primary" class="conn-conn-btn">连接</el-button>
@@ -21,6 +21,9 @@
 </template> 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue'
+
+const msg = ref("hello world")
+const connTitle = ref("test-redis-conn")
 </script>
 <style lang='scss' scoped>
 * {
@@ -45,5 +48,11 @@ import { ref, reactive } from 'vue'
 
 .one-item-box .conn-conn-btn {
     margin: auto;
+}
+
+.items-center {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 </style>
