@@ -13,3 +13,4 @@
 * 2022 vue3 写 admin [教程](https://www.bilibili.com/video/BV1nr4y1G73d/) 
 * 手把手教你用 vite + vue3 + ts + pinia + vueuse 打造企业级前端项目 https://juejin.cn/post/7079785777692934174
 * (10月最新) 前端图形学实战: 从零开发几何画板(vue3 + vite版) https://juejin.cn/post/7154723970007171108
+* flex 布局下的 text-overflow 问题解决办法 https://blog.csdn.net/weixin_43820866/article/details/104114811
