@@ -32,6 +32,18 @@
 </template> 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue'
+const showConnected = ref(true)
+const searchContent = ref("")
+const curDb = ref(0)
+const dbArr = ref([0, 1, 2])
+const connName = ref("127.0.0.1:2379-11111111111111111")
+
+const toConnect = function () {
+    showConnected.value = !showConnected.value
+    // 如何写 vue3 组件？
+    // 如何更改 ref 值
+}
+
 </script>
 <style lang='scss' scoped>
 // * {
@@ -52,9 +64,29 @@ import { ref, reactive } from 'vue'
     line-height: 70px;
 }
 
-.one-item-box:hover {}
+.conn-info-btn {
+    margin-right: 0;
+}
 
-.one-item-box .conn-conn-btn {
-    margin: auto;
+.conn-name-div {
+    width: 140px;
+    height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.conn-name-span {
+    flex: 1;
+    height: 32px;
+    line-height: 32px;
+}
+
+.show-dropdown {
+    display: flex;
+}
+
+.hide-dropdown {
+    display: none;
 }
 </style>
