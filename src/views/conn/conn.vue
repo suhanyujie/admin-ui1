@@ -1,11 +1,11 @@
 <template>
-    <el-row style="">
+    <el-row v-for="conn in connList" :key="conn.id">
         <div class="one-item-box">
             <div style="display: flex; flex-direction: column;">
                 <div style="display: flex; flex-direction: row; align-items: flex-start; width: 300px;">
                     <div class="conn-name-div">
                         <span class="conn-name-span" style="">{{
-                                connName
+                                conn.connName
                         }}</span>
                     </div>
                     <div class="icon-box"
@@ -32,11 +32,24 @@
 </template> 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue'
-const showConnected = ref(true)
+const showConnected = ref(false)
 const searchContent = ref("")
 const curDb = ref(0)
 const dbArr = ref([0, 1, 2])
 const connName = ref("127.0.0.1:2379-11111111111111111")
+
+const connList = ref([
+    {
+        "id": 1,
+        "connName": "127.0.0.1:2379-1001"
+    }, {
+        "id": 2,
+        "connName": "127.0.0.1:2379-1002"
+    }, {
+        "id": 3,
+        "connName": "127.0.0.1:2379-1003"
+    }
+])
 
 const toConnect = function () {
     showConnected.value = !showConnected.value
@@ -52,10 +65,10 @@ const toConnect = function () {
 // }
 
 .one-item-box {
-    // width: 262px;
+    width: 262px;
     // height: 70px;
     // border: 1px solid rgb(175, 167, 169);
-    // border-radius: 5px;
+    border-radius: 5px;
 }
 
 .one-item-box .conn-name-box {
